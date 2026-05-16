@@ -2,7 +2,7 @@
   "name": "tokencut",
   "displayName": "tokencut",
   "description": "Local-first token reuse layer for GitHub Copilot. Detects repeated and semantically similar requests and serves cached answers when safe.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "algorythmik",
   "license": "MIT",
   "engines": {

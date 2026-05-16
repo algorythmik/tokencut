@@ -10,6 +10,19 @@ node_modules/
 
 # Service source (the bundled copy lives in service/ at root)
 # service/ is included — do NOT ignore it
+# Trim unnecessary files from bundled service node_modules
+service/node_modules/**/*.md
+service/node_modules/**/*.ts
+service/node_modules/**/*.map
+service/node_modules/**/test/**
+service/node_modules/**/tests/**
+service/node_modules/**/__tests__/**
+service/node_modules/**/docs/**
+service/node_modules/**/*.txt
+service/node_modules/**/.github/**
+service/node_modules/**/CHANGELOG*
+service/node_modules/**/LICENCE*
+service/node_modules/**/LICENSE*
 
 # Git, editor, etc.
 .git/
