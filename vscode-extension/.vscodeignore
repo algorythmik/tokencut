@@ -1,0 +1,22 @@
+# Source — compiled to out/
+src/
+tsconfig.json
+
+# Scripts only needed at build time
+scripts/
+
+# Dev dependencies
+node_modules/
+
+# Service source (the bundled copy lives in service/ at root)
+# service/ is included — do NOT ignore it
+
+# Git, editor, etc.
+.git/
+.gitignore
+.vscode/
+*.vsix
+
+# Test artefacts
+**/*.test.js
+**/*.spec.js

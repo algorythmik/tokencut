@@ -1,0 +1,69 @@
+{
+  "name": "tokencut",
+  "displayName": "tokencut",
+  "description": "Local-first token reuse layer for GitHub Copilot. Detects repeated and semantically similar requests and serves cached answers when safe.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "chatParticipants": [
+      {
+        "id": "tokencut.assistant",
+        "name": "tokencut",
+        "description": "Ask tokencut to explain code, summarize files, or answer project questions. Reuses prior answers when safe.",
+        "isSticky": true
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "workbench.action.chat.open",
+        "key": "ctrl+shift+/",
+        "mac": "cmd+shift+/",
+        "args": { "query": "@tokencut " }
+      }
+    ],
+    "commands": [
+      {
+        "command": "tokencut.explainSelection",
+        "title": "tokencut: Explain Selection"
+      },
+      {
+        "command": "tokencut.repoQuestion",
+        "title": "tokencut: How Do I Build / Test / Run This Repo?"
+      }
+    ],
+    "configuration": {
+      "title": "tokencut",
+      "properties": {
+        "tokencut.serviceUrl": {
+          "type": "string",
+          "default": "http://127.0.0.1:8787",
+          "description": "URL of the local tokencut service"
+        },
+        "tokencut.forceFresh": {
+          "type": "boolean",
+          "default": false,
+          "description": "Always call the live model, bypassing any cached answer"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "copy-service": "node scripts/copy-service.mjs",
+    "vscode:prepublish": "npm run compile && npm run copy-service"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.4.0"
+  }
+}
