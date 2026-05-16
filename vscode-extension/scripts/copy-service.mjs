@@ -15,8 +15,8 @@ import { fileURLToPath } from "url";
 import { join, dirname } from "path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const SRC  = join(__dirname, "..", "service");
-const DEST = join(__dirname, "service");
+const SRC  = join(__dirname, "..", "..", "service");
+const DEST = join(__dirname, "..", "service");
 
 console.log(`Copying service:\n  ${SRC}\n→ ${DEST}`);
 
