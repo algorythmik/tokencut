@@ -141,11 +141,6 @@ It listens on `127.0.0.1:8787` and only accepts connections from localhost.
 - Nothing is sent to any remote server by tokencut.
 
 ---
-
-## Contributing
-
-See [DESIGN.md](DESIGN.md) for the product rationale and technical architecture.
-
 ## License
 
 MIT
